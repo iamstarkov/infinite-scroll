@@ -358,7 +358,7 @@
 					// use a documentFragment because it works when content is going into a table or UL
 					frag = document.createDocumentFragment();
 					while (box[0].firstChild) {
-						frag.appendChild(box[0].firstChild).hide().slideUp();
+						frag.appendChild(box[0].firstChild).delay(1000).slideUp();
 					}
 
 					this._debug('contentSelector', $(opts.contentSelector)[0]);
@@ -478,7 +478,7 @@
 
             opts.loading.msg
             .find('img')
-            .hide()
+            // .hide()
             .parent()
             .find('div')
             .html(opts.loading.finishedMsg)
