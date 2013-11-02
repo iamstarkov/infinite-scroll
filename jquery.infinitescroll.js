@@ -9,7 +9,7 @@
    + version 2.0b2.120519
    + Copyright 2011/12 Paul Irish & Luke Shumard
    + Licensed under the MIT license
-
+и
    + Documentation: http://infinite-scroll.com/
 */
 
@@ -154,7 +154,7 @@
                 $(opts.navSelector).hide();
                 opts.loading.msg
                 .appendTo(opts.loading.selector)
-                .show(opts.loading.speed, $.proxy(function() {
+                .slideDown(opts.loading.speed, $.proxy(function() {
 					this.beginAjax(opts);
 				}, self));
             };
@@ -162,7 +162,7 @@
             // determine loading.finished actions
             opts.loading.finished = opts.loading.finished || function() {
                 if (!opts.state.isBeyondMaxPage)
-                    opts.loading.msg.fadeOut(opts.loading.speed);
+                    opts.loading.msg.slideUp(opts.loading.speed);
             };
 
 			// callback loading
