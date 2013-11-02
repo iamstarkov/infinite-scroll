@@ -162,7 +162,7 @@
             // determine loading.finished actions
             opts.loading.finished = opts.loading.finished || function() {
                 if (!opts.state.isBeyondMaxPage)
-                    opts.loading.msg.slideUp(opts.loading.speed);
+                    opts.loading.msg.delay(100).slideUp(opts.loading.speed);
             };
 
 			// callback loading
