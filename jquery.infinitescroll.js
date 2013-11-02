@@ -483,7 +483,10 @@
             .find('div')
             .html(opts.loading.finishedMsg)
             .animate({ opacity: 1 }, 2000, function () {
-                $(this).parent().delay(1000).slideDown();
+                var $this = $(this);
+                setTimeout(function() {
+                    $this.parent().slideDown();
+                }, 1000);
             });
 
             // user provided callback when done    
