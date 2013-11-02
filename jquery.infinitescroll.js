@@ -154,7 +154,7 @@
                 $(opts.navSelector).hide();
                 opts.loading.msg
                 .appendTo(opts.loading.selector)
-                .slideDown(opts.loading.speed, $.proxy(function() {
+                .slideToggle(opts.loading.speed, $.proxy(function() {
 					this.beginAjax(opts);
 				}, self));
             };
@@ -358,7 +358,7 @@
 					// use a documentFragment because it works when content is going into a table or UL
 					frag = document.createDocumentFragment();
 					while (box[0].firstChild) {
-						frag.appendChild(box[0].firstChild);
+						frag.appendChild(box[0].firstChild).hide().slideToggle();
 					}
 
 					this._debug('contentSelector', $(opts.contentSelector)[0]);
@@ -481,7 +481,7 @@
             .hide()
             .parent()
             .find('div').html(opts.loading.finishedMsg).animate({ opacity: 1 }, 2000, function () {
-                $(this).parent().fadeOut(opts.loading.speed);
+                $(this).parent().slideUp(opts.loading.speed);
             });
 
             // user provided callback when done    
